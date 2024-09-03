@@ -1,6 +1,6 @@
-from Matrix import Matrix
+from matrix import Matrix
 
 if __name__ == '__main__':
-    m1 = Matrix([1, 2, 3], [2, 3, 4])
-    m2 = Matrix([1, 2, 3], [2, 3, 4])
-    print(m1 + m2)
+    matrix_1 = Matrix([[1, 2, 3], [2, 3, 4]])
+    matrix_2 = Matrix([[1, 2, 3], [2, 3, 4]])
+    print(matrix_1 + matrix_2)
