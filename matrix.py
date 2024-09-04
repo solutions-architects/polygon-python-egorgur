@@ -1,4 +1,4 @@
-from typing import Self
+from typing import Self, Sequence
 
 
 class Matrix:
@@ -9,29 +9,17 @@ class Matrix:
 
     """
 
-    def __init__(self: Self, init_data: list[list[int | float]] | tuple[list[int | float], ...]):
-        """
-        Init method.
-
-        Takes the matrix parameters (width and height of a matrix) as a list of lists.
-        """
+    def __init__(self: Self, init_data: Sequence[Sequence[int | float]]):
+        """Init method."""
         print(init_data)
         self.matrix_list = init_data
 
     def __str__(self: Self):
-        """
-        Str method.
-
-        Gets called when a Matrix object gets printed via print()
-        """
+        """Str method."""
         return str(self.matrix_list)
 
     def __add__(self: Self, other: Self):
-        """
-        Summ method.
-
-        Gets called in summing operations.
-        """
+        """Summ method."""
         return Matrix(
             tuple(map(
                 lambda row1, row2: list(
