@@ -11,7 +11,6 @@ class Matrix:
 
     def __init__(self: Self, init_data: Sequence[Sequence[int | float]]):
         """Init method."""
-        print(init_data)
         self.matrix_list = init_data
 
     def __str__(self: Self):
@@ -19,7 +18,7 @@ class Matrix:
         return str(self.matrix_list)
 
     def __add__(self: Self, other: Self):
-        """Summ method."""
+        """Sum method."""
         return Matrix(
             tuple(map(
                 lambda row1, row2: list(
