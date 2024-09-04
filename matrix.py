@@ -9,26 +9,27 @@ class Matrix:
 
     """
 
-    def __init__(self: Self, init_data: Sequence[Sequence[int | float]]):
+    def __init__(self: Self, init_data: Sequence[Sequence[int | float]]) -> None:
         """Init method."""
-        self.matrix_list = init_data
+        self._matrix_data = init_data
 
-    def __str__(self: Self):
+    def __str__(self: Self) -> str:
         """Str method."""
-        return str(self.matrix_list)
+        return str(self._matrix_data)
 
-    def __add__(self: Self, other: Self):
+    def __add__(self: Self, other: Self) -> Self:
         """Sum method."""
         return Matrix(
-            tuple(map(
-                lambda row1, row2: list(
-                    map(
-                        lambda element1, element2: element1 + element2,
-                        row1,
-                        row2
-                    )
-                ),
-                self.matrix_list,
-                other.matrix_list
-            ))
+            [
+                [
+                    self._matrix_data[row][col] + other._matrix_data[row][col]
+
+                    for col in range(len(self._matrix_data[row]))
+                ]
+                for row in range(len(self._matrix_data))
+            ]
         )
+
+    def __eq__(self: Self, other: Self) -> bool:
+        """Equality method."""
+        return self._matrix_data == other._matrix_data
